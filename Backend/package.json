@@ -1,0 +1,25 @@
+{
+  "name": "votacion-backend",
+  "version": "1.0.0",
+  "description": "Backend para el sistema de votación del Instituto San José",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "build": "echo 'No build step required'",
+    "test": "node test/loadTest.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^8.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "keywords": ["votacion", "instituto", "san-jose"],
+  "author": "Instituto San José",
+  "license": "MIT"
+}

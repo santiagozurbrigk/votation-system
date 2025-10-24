@@ -1,0 +1,17 @@
+{
+  "name": "votacion-load-tests",
+  "version": "1.0.0",
+  "description": "Tests de carga para el sistema de votación",
+  "type": "module",
+  "scripts": {
+    "load-test": "node loadTest.js",
+    "stress-test": "node stressTest.js",
+    "monitor": "node monitor.js",
+    "test-all": "npm run load-test && npm run stress-test"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  },
+  "keywords": ["load-testing", "votacion", "performance"],
+  "author": "Instituto San José"
+}
