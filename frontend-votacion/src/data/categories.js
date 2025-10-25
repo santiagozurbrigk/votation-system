@@ -32,7 +32,7 @@ export const categories = [
     name: 'Best Actress',
     nameEs: 'Mejor Actriz',
     candidates: [
-      { id: 'actriz1', name: 'Valen Arredondo' },
+      { id: 'actriz1', name: 'Valentina Arredondo' },
       { id: 'actriz2', name: 'Maitena Montenegro' }
     ]
   },
@@ -59,7 +59,7 @@ export const categories = [
     name: 'Best Costume & Set Design',
     nameEs: 'Vestuario y Escenografía',
     candidates: [
-      { id: 'vestuario1', name: 'Martín Freije y Renata Etras' },
+      { id: 'vestuario1', name: 'Martín Freije y Renata Eyras' },
       { id: 'vestuario2', name: 'Dolores Etcheverry y Dolores Monti' }
     ]
   },
