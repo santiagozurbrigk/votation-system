@@ -25,11 +25,12 @@ router.post('/', async (req, res) => {
     }
 
     // Verificar por IP (opcional - puede ser restrictivo en redes compartidas)
-    const votesFromSameIP = await Vote.find({ clientIP });
-    if (votesFromSameIP.length > 0) {
-      console.log('Intento de voto duplicado desde la misma IP:', clientIP);
-      return res.status(400).json({ message: 'Ya se ha votado desde esta ubicación' });
-    }
+    // COMENTADO TEMPORALMENTE PARA TESTS DE CARGA
+    // const votesFromSameIP = await Vote.find({ clientIP });
+    // if (votesFromSameIP.length > 0) {
+    //   console.log('Intento de voto duplicado desde la misma IP:', clientIP);
+    //   return res.status(400).json({ message: 'Ya se ha votado desde esta ubicación' });
+    // }
 
     // Crear votos
     const votePromises = Object.entries(votes).map(([categoryId, candidateId]) => {
