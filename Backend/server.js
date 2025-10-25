@@ -11,8 +11,23 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+// Configurar CORS
+const corsOptions = {
+  origin: [
+    'http://localhost:3000',
+    'http://localhost:5173',
+    'https://system-votation-english.vercel.app',
+    'https://system-votation-english-ka4qftlxz.vercel.app',
+    'https://system-votation-english-c8m14asxo.vercel.app',
+    'https://*.vercel.app' // Permitir todos los subdominios de Vercel
+  ],
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+};
+
 // Middleware
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // Conectar a MongoDB
