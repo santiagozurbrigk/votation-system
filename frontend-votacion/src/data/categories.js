@@ -77,8 +77,8 @@ export const categories = [
     name: 'Best Film',
     nameEs: 'Mejor Película',
     candidates: [
-      { id: 'pelicula1', name: 'Película 1' },
-      { id: 'pelicula2', name: 'Película 2' }
+      { id: 'pelicula1', name: 'White Chicks' },
+      { id: 'pelicula2', name: 'Not One More' }
     ]
   }
 ];
