@@ -1,7 +1,7 @@
 import fetch from 'node-fetch';
 
 // Configuración del test
-const BASE_URL = 'http://localhost:5000';
+const BASE_URL = 'https://votation-system.onrender.com';
 const CONCURRENT_USERS = 100;
 const VOTE_DELAY = 100; // ms entre votos de cada usuario
 
