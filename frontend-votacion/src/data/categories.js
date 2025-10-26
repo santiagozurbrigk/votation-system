@@ -5,8 +5,8 @@ export const categories = [
     name: 'Best Director',
     nameEs: 'Mejor Director',
     candidates: [
-      { id: 'director1', name: 'Morela Lazo' },
-      { id: 'director2', name: 'Maitena Montenegro' }
+      { id: 'Morela Lazo', name: 'Morela Lazo' },
+      { id: 'Maitena Montenegro', name: 'Maitena Montenegro' }
     ]
   },
   {
@@ -14,8 +14,8 @@ export const categories = [
     name: 'Best Actor',
     nameEs: 'Mejor Actor',
     candidates: [
-      { id: 'actor1', name: 'Joaquín Jáuregui' },
-      { id: 'actor2', name: 'Benicio Rincón' }
+      { id: 'Joaquín Jáuregui', name: 'Joaquín Jáuregui' },
+      { id: 'Benicio Rincón', name: 'Benicio Rincón' }
     ]
   },
   {
@@ -23,8 +23,8 @@ export const categories = [
     name: 'Best Supporting Actor',
     nameEs: 'Mejor Actor Secundario',
     candidates: [
-      { id: 'actor-sec1', name: 'Bautista Cerini' },
-      { id: 'actor-sec2', name: 'Lucio Marzullo' }
+      { id: 'Bautista Cerini', name: 'Bautista Cerini' },
+      { id: 'Lucio Marzullo', name: 'Lucio Marzullo' }
     ]
   },
   {
@@ -32,8 +32,8 @@ export const categories = [
     name: 'Best Actress',
     nameEs: 'Mejor Actriz',
     candidates: [
-      { id: 'actriz1', name: 'Valentina Arredondo' },
-      { id: 'actriz2', name: 'Maitena Montenegro' }
+      { id: 'Valentina Arredondo', name: 'Valentina Arredondo' },
+      { id: 'Maitena Montenegro', name: 'Maitena Montenegro' }
     ]
   },
   {
@@ -41,8 +41,8 @@ export const categories = [
     name: 'Best Supporting Actress',
     nameEs: 'Mejor Actriz Secundaria',
     candidates: [
-      { id: 'actriz-sec1', name: 'Juana Sánchez' },
-      { id: 'actriz-sec2', name: 'Agustina Sala' }
+      { id: 'Juana Sánchez', name: 'Juana Sánchez' },
+      { id: 'Agustina Sala', name: 'Agustina Sala' }
     ]
   },
   {
@@ -50,8 +50,8 @@ export const categories = [
     name: 'Best Editor',
     nameEs: 'Mejor Editor',
     candidates: [
-      { id: 'editor1', name: 'Patricio Segura' },
-      { id: 'editor2', name: 'Maitena Montenegro' }
+      { id: 'Patricio Segura', name: 'Patricio Segura' },
+      { id: 'Maitena Montenegro', name: 'Maitena Montenegro' }
     ]
   },
   {
@@ -59,8 +59,8 @@ export const categories = [
     name: 'Best Costume & Set Design',
     nameEs: 'Vestuario y Escenografía',
     candidates: [
-      { id: 'vestuario1', name: 'Martín Freije y Renata Eyras' },
-      { id: 'vestuario2', name: 'Dolores Etcheverry y Dolores Monti' }
+      { id: 'Martín Freije y Renata Eyras', name: 'Martín Freije y Renata Eyras' },
+      { id: 'Dolores Etcheverry y Dolores Monti', name: 'Dolores Etcheverry y Dolores Monti' }
     ]
   },
   {
@@ -68,8 +68,8 @@ export const categories = [
     name: 'Revelation',
     nameEs: 'Revelación',
     candidates: [
-      { id: 'revelacion1', name: 'Julian Morete' },
-      { id: 'revelacion2', name: 'Lucio Marzullo' }
+      { id: 'Julian Morete', name: 'Julian Morete' },
+      { id: 'Lucio Marzullo', name: 'Lucio Marzullo' }
     ]
   },
   {
@@ -77,8 +77,8 @@ export const categories = [
     name: 'Best Film',
     nameEs: 'Mejor Película',
     candidates: [
-      { id: 'pelicula1', name: 'White Chicks' },
-      { id: 'pelicula2', name: 'Not One More' }
+      { id: 'White Chicks', name: 'White Chicks' },
+      { id: 'Not One More', name: 'Not One More' }
     ]
   }
 ];
