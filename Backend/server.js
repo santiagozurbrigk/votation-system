@@ -13,14 +13,33 @@ const PORT = process.env.PORT || 5000;
 
 // Configurar CORS
 const corsOptions = {
-  origin: [
-    'http://localhost:3000',
-    'http://localhost:5173',
-    'https://system-votation-english.vercel.app',
-    'https://system-votation-english-ka4qftlxz.vercel.app',
-    'https://system-votation-english-c8m14asxo.vercel.app',
-    'https://*.vercel.app' // Permitir todos los subdominios de Vercel
-  ],
+  origin: function (origin, callback) {
+    // Permitir requests sin origin (ej: Postman, mobile apps)
+    if (!origin) return callback(null, true);
+    
+    // Lista de dominios permitidos
+    const allowedOrigins = [
+      'http://localhost:3000',
+      'http://localhost:5173',
+      'https://system-votation-english.vercel.app',
+      'https://system-votation-english-ka4qftlxz.vercel.app',
+      'https://system-votation-english-c8m14asxo.vercel.app',
+      'https://votation-system.vercel.app', // Nuevo dominio
+      'https://votation-system-c8m14asxo.vercel.app', // Preview domain
+    ];
+    
+    // Permitir cualquier subdominio de vercel.app
+    if (origin.endsWith('.vercel.app')) {
+      return callback(null, true);
+    }
+    
+    // Verificar si el origin está en la lista
+    if (allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error('No permitido por CORS'));
+    }
+  },
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
