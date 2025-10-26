@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { API_ENDPOINTS } from '../config/api';
+import { categories } from '../data/categories';
 
 const AdminPanel = ({ onReset }) => {
   const [results, setResults] = useState({});
@@ -67,6 +68,22 @@ const AdminPanel = ({ onReset }) => {
         alert('Error al conectar con el servidor');
       }
     }
+  };
+
+  // Función para obtener el nombre del candidato desde las categorías
+  const getCandidateName = (categoryId, candidateId) => {
+    const category = categories.find(cat => cat.id === categoryId);
+    if (category) {
+      const candidate = category.candidates.find(c => c.id === candidateId);
+      return candidate ? candidate.name : candidateId;
+    }
+    return candidateId;
+  };
+
+  // Función para obtener el nombre de la categoría
+  const getCategoryName = (categoryId) => {
+    const category = categories.find(cat => cat.id === categoryId);
+    return category ? category.nameEs : categoryId;
   };
 
   const getWinner = (categoryResults) => {
@@ -140,6 +157,7 @@ const AdminPanel = ({ onReset }) => {
             {Object.entries(results).map(([categoryId, categoryResults]) => {
             const winner = getWinner(categoryResults);
             const totalCategoryVotes = Object.values(categoryResults || {}).reduce((a, b) => a + b, 0);
+            const winnerName = winner ? getCandidateName(categoryId, winner[0]) : null;
             
             return (
               <div key={categoryId} className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
@@ -150,7 +168,7 @@ const AdminPanel = ({ onReset }) => {
                 {winner && (
                   <div className="mb-4 p-3 bg-yellow-500/20 rounded-lg">
                     <p className="text-white font-semibold">Ganador:</p>
-                    <p className="text-yellow-500 text-lg">{winner[0]}</p>
+                    <p className="text-yellow-500 text-lg">{winnerName}</p>
                     <p className="text-white">{winner[1]} votos</p>
                   </div>
                 )}
@@ -158,9 +176,10 @@ const AdminPanel = ({ onReset }) => {
                 <div className="space-y-2">
                   {Object.entries(categoryResults).map(([candidateId, votes]) => {
                     const percentage = totalCategoryVotes > 0 ? (votes / totalCategoryVotes) * 100 : 0;
+                    const candidateName = getCandidateName(categoryId, candidateId);
                     return (
                       <div key={candidateId} className="flex items-center justify-between">
-                        <span className="text-white text-sm">{candidateId}</span>
+                        <span className="text-white text-sm">{candidateName}</span>
                         <div className="flex items-center space-x-2">
                           <div className="w-20 bg-gray-700 rounded-full h-2">
                             <div 
