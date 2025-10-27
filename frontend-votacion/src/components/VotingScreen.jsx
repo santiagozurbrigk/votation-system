@@ -74,9 +74,11 @@ const VotingScreen = ({ category, categoryIndex, totalCategories, onVote }) => {
                   <div className="text-xl font-semibold">
                     {candidate.name}
                   </div>
-                  <div className="text-sm opacity-80">
-                    Candidato {index + 1}
-                  </div>
+                  {candidate.film && (
+                    <div className="text-sm opacity-80">
+                      {candidate.film}
+                    </div>
+                  )}
                 </div>
                 {selectedCandidate === candidate.id && (
                   <div className="text-2xl">✓</div>
